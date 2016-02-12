@@ -7,7 +7,13 @@ import static spark.Spark.*;
 
 public class App {
   public static void main(String[] args) {
-    
+    staticFileLocation("/public");
+    String layout = "templates/layout.vtl";
+    get("/", (request, response) -> {
+      HashMap model = new HashMap();
+      model.put("template", "templates/enter-puzzle.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 
   public static String removeVowels(String userInput) {
