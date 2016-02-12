@@ -58,6 +58,8 @@ public class App {
     return userInput;
   }
 
+  //giveHint function was meant to be used to display puzzle with one vowel revealed, didn't have time to figure out user logic
+
   public static String giveHint(String puzzle, String originalPhrase) {
     char[] puzzleCharArray = puzzle.toCharArray();
     char[] phraseCharArray = originalPhrase.toCharArray();
