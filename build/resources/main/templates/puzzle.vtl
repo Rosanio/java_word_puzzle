@@ -1,3 +1,10 @@
 <h1>Guess the Puzzle</h1>
 <h3>Here's the puzzle your friend entered, give it your best shot!</h3>
 <p id="wordPuzzle">$puzzle</p>
+<form action="/guess">
+  <div class="form-group">
+    <label for="guess">Would you like to solve the puzzle?</label>
+    <input type="text" name="guess" id="guess" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Solve it!</button>
+</form>

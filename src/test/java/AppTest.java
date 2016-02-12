@@ -43,6 +43,16 @@ public class AppTest extends FluentTest{
     assertThat(pageSource()).contains("y-- sh--ld pr-b-bly -nt-r - phr-s-");
   }
 
+  @Test
+  public void guessCorrectly() {
+    goTo("http://localhost:4567/");
+    fill("#input-puzzle").with("apples and bananas");
+    submit(".btn");
+    fill("#guess").with("apples and bananas");
+    submit(".btn");
+    assertThat(pageSource()).contains("apples and bananas");
+  }
+
 //Behavior Testing
 
   @Test
