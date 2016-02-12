@@ -14,6 +14,15 @@ public class App {
       model.put("template", "templates/enter-puzzle.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/puzzle", (request, response) -> {
+      HashMap model = new HashMap();
+      String phrase = request.queryParams("input-puzzle");
+      String puzzle = removeVowels(phrase);
+      model.put("puzzle", puzzle);
+      model.put("template", "templates/puzzle.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 
   public static String removeVowels(String userInput) {
