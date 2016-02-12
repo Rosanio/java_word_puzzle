@@ -18,6 +18,9 @@ public class App {
     get("/puzzle", (request, response) -> {
       HashMap model = new HashMap();
       String phrase = request.queryParams("input-puzzle");
+      if(phrase.length() == 0) {
+        phrase = "you should probably enter a phrase";
+      }
       String puzzle = removeVowels(phrase);
       model.put("puzzle", puzzle);
       model.put("template", "templates/puzzle.vtl");

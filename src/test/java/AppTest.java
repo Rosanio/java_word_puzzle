@@ -36,6 +36,13 @@ public class AppTest extends FluentTest{
     assertThat(pageSource()).contains("-ppl-s -nd b-n-n-s");
   }
 
+  @Test
+  public void noInputPhrase() {
+    goTo("http://localhost:4567/");
+    submit(".btn");
+    assertThat(pageSource()).contains("y-- sh--ld pr-b-bly -nt-r - phr-s-");
+  }
+
 //Behavior Testing
 
   @Test
