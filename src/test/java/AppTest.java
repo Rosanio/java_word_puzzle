@@ -66,4 +66,10 @@ public class AppTest extends FluentTest{
     App testApp = new App();
     assertEquals("th-s c-d- r-v--w -s --sy", testApp.removeVowels("this code review is easy"));
   }
+
+  @Test
+  public void giveHint_replaceDashWithVowel_returnPuzzleWithHint() {
+    App testApp = new App();
+    assertEquals("pple j--c-", testApp.giveHint("ppl- j--c-", "pple juice"));
+  }
 }

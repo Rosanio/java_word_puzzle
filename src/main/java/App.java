@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -54,5 +56,29 @@ public class App {
       userInput = userInput.replace(letter, '-');
     }
     return userInput;
+  }
+
+  public static String giveHint(String puzzle, String originalPhrase) {
+    char[] puzzleCharArray = puzzle.toCharArray();
+    char[] phraseCharArray = originalPhrase.toCharArray();
+    ArrayList<Character> puzzleArrayList = new ArrayList<Character>();
+    for(char letter: puzzleCharArray) {
+      puzzleArrayList.add(letter);
+    }
+    ArrayList<Character> phraseArrayList = new ArrayList<Character>();
+    for(char letter: phraseCharArray) {
+      phraseArrayList.add(letter);
+    }
+    Integer index = 0;
+    for(Character letter: puzzleArrayList) {
+      if(letter == '-') {
+        index = puzzleArrayList.indexOf(letter);
+        break;
+      }
+    }
+    Character replaceVowel = phraseArrayList.get(index);
+    puzzleCharArray[index] = replaceVowel;
+    String puzzleHint = new String(puzzleCharArray);
+    return puzzleHint;
   }
 }
