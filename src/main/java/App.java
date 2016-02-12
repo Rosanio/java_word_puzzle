@@ -19,6 +19,9 @@ public class App {
     get("/puzzle", (request, response) -> {
       HashMap model = new HashMap();
       App.phrase = request.queryParams("input-puzzle"); //Update global phrase variable. Now the phrase can be used in any other lambda
+      if(App.phrase.length() == 0) {
+        App.phrase = "you should probably enter a phrase";
+      }
       String puzzle = removeVowels(App.phrase);
       model.put("puzzle", puzzle);
       model.put("template", "templates/puzzle.vtl");

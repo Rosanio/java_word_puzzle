@@ -50,7 +50,7 @@ public class AppTest extends FluentTest{
     submit(".btn");
     fill("#guess").with("apples and bananas");
     submit(".btn");
-    assertThat(pageSource()).contains("apples and bananas");
+    assertThat(pageSource()).contains("Good for you");
   }
 
 //Behavior Testing
