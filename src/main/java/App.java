@@ -26,12 +26,10 @@ public class App {
   }
 
   public static String removeVowels(String userInput) {
-    userInput = userInput.replace('a', '-');
-    userInput = userInput.replace('e', '-');
-    userInput = userInput.replace('i', '-');
-    userInput = userInput.replace('o', '-');
-    userInput = userInput.replace('u', '-');
+    char[] vowels = {'a','e','i','o','u','A','E','I','O','U'};
+    for(char letter: vowels) {
+      userInput = userInput.replace(letter, '-');
+    }
     return userInput;
-
   }
 }
