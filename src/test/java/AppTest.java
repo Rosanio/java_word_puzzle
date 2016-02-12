@@ -17,6 +17,8 @@ public class AppTest extends FluentTest{
     return webDriver;
   }
 
+//Integration Testing
+
   @ClassRule
   public static ServerRule server = new ServerRule();
 
@@ -25,6 +27,16 @@ public class AppTest extends FluentTest{
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("Enter a Puzzle");
   }
+
+  @Test
+  public void noVowelPhrase() {
+    goTo("http://localhost:4567/");
+    fill("#input-puzzle").with("apples and bananas");
+    submit(".btn");
+    assertThat(pageSource()).contains("-ppl-s -nd b-n-n-s");
+  }
+
+//Behavior Testing
 
   @Test
   public void removeVowels_removeLetterA_returnStringWithNoA() {
