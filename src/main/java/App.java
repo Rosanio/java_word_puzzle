@@ -16,6 +16,10 @@ public class App {
     //   }
     // }
     userInput = userInput.replace('a', '-');
+    userInput = userInput.replace('e', '-');
+    userInput = userInput.replace('i', '-');
+    userInput = userInput.replace('o', '-');
+    userInput = userInput.replace('u', '-');
     return userInput;
 
   }

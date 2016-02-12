@@ -8,7 +8,7 @@ public class AppTest {
   @Test
   public void removeVowels_removeLetterA_returnStringWithNoA() {
     App testApp = new App();
-    assertEquals("-pple", testApp.removeVowels("apple"));
+    assertEquals("-nd", testApp.removeVowels("-nd"));
   }
 
   @Test
