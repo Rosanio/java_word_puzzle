@@ -32,7 +32,9 @@ public class App {
       HashMap model = new HashMap();
       String guess = request.queryParams("guess");
       String correctGuess = "";
-      if(guess.equals(App.phrase)) {
+      if(guess.length() == 0) {
+        correctGuess += "Not a very good guesser, are you?";
+      } else if(guess.equals(App.phrase)) {
         correctGuess += "You got it right! Good for you!";
       } else {
         correctGuess += "No, that's wrong! You did bad and you should feel bad!";
